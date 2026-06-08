@@ -1,0 +1,7 @@
+node_modules
+dist/
+scratch/
+settings.local.json
+AGENTS.md
+CLAUDE.md
+TODO.md

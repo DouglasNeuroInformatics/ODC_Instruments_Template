@@ -1,0 +1,34 @@
+{
+  "name": "odc-instruments-template",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.6.3",
+  "license": "UNLICENSED",
+  "scripts": {
+    "format": "prettier --write lib",
+    "lint": "tsc && eslint --fix lib",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@opendatacapture/runtime-v1": "^1.16.4"
+  },
+  "devDependencies": {
+    "@douglasneuroinformatics/eslint-config": "^6.0.0",
+    "@douglasneuroinformatics/prettier-config": "^0.3.0",
+    "@douglasneuroinformatics/tsconfig": "^2.0.0",
+    "@opendatacapture/instrument-guidelines": "^1.16.4",
+    "@opendatacapture/serve-instrument": "^1.16.4",
+    "@types/node": "^24.x",
+    "eslint": "^9.22.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.5.3",
+    "typescript": "6.0.x"
+  },
+  "prettier": "@douglasneuroinformatics/prettier-config",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
