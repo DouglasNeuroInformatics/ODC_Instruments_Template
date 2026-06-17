@@ -95,17 +95,42 @@ Pick your operating system and follow the steps in order.
 <details>
 <summary><strong>macOS</strong></summary>
 
-1. **Get the project files.** At the top of this page on GitHub, click the green **Use this template** button → **Create a new repository** to make your own copy. (If you just want to try it out, click **Code → Download ZIP** instead, then unzip the file to a folder you'll remember, such as your Desktop.) Installing Git is optional — the ZIP route needs no extra tools.
+1. **Open the Terminal.** Press **Cmd + Space**, type `Terminal`, and press **Return**. The Terminal is a text window where you type commands instead of clicking buttons — you'll run the rest of these steps here by pasting in each command and pressing **Return**.
 
-2. **Install a code editor (VS Code).** Download it from [code.visualstudio.com](https://code.visualstudio.com), open the downloaded file, and drag VS Code into your **Applications** folder. This is where you'll read, edit, and run the project.
+2. **Install Homebrew.** Homebrew is a tool that installs other software for you. Copy the command below from [brew.sh](https://brew.sh), paste it into the Terminal, and press **Return**:
 
-3. **Install Node.js.** Go to [nodejs.org](https://nodejs.org) and click the big **LTS** download button (LTS means the stable, recommended version). Open the downloaded `.pkg` installer and click through it, accepting all the defaults.
+   ```sh
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
 
-4. **Open the project in VS Code.** Start VS Code, then choose **File → Open Folder…** and select the project folder from step 1.
+   Follow the on-screen prompts (it may ask for your password). When it finishes, it may print a couple of `Next steps` commands to run so the `brew` command works — copy and run those too, then close and reopen the Terminal.
 
-5. **Open a terminal.** In VS Code's menu, choose **Terminal → New Terminal**. A text panel appears at the bottom — it's already pointed at your project folder. (macOS also ships with a **Terminal** app in Applications → Utilities, but the VS Code terminal is easier because you don't have to navigate to the folder yourself.)
+3. **Install Git and a code editor.** Git downloads the project files; VS Code is where you'll read and edit them. Install both with Homebrew:
 
-6. **Install everything and run an instrument.** Type these commands one at a time, pressing **Return** after each:
+   ```sh
+   brew install git
+   brew install --cask visual-studio-code
+   ```
+
+4. **Download the project.** This copies the project to your computer and moves you into its folder:
+
+   ```sh
+   git clone https://github.com/DouglasNeuroInformatics/ODC_Instruments_Template.git
+   cd ODC_Instruments_Template
+   ```
+
+   (If you made your own copy with **Use this template** on GitHub, clone _that_ repository's URL instead.)
+
+5. **Install nvm and Node.js.** nvm (Node Version Manager) installs the version of [Node.js](https://nodejs.org) this project needs. Install nvm by following the official instructions at [github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm#installing-and-updating), then **close and reopen the Terminal** and `cd ODC_Instruments_Template` again. Now install Node:
+
+   ```sh
+   nvm install
+   nvm use
+   ```
+
+   (This reads the project's `.nvmrc` file and installs the right Node.js version.)
+
+6. **Install everything and run an instrument:**
 
    ```sh
    corepack enable
@@ -115,20 +140,27 @@ Pick your operating system and follow the steps in order.
 
    (`corepack enable` sets up `pnpm` and only needs to be run once.)
 
-7. **View it.** Open your web browser and go to [http://localhost:3000](http://localhost:3000). You should see the example instrument. To stop the preview, click in the terminal and press **Control + C**.
+7. **View it.** Open your web browser and go to [http://localhost:3000](http://localhost:3000). You should see the example instrument. To stop the preview, click in the Terminal and press **Control + C**. To edit the project, open VS Code and choose **File → Open Folder…**, then select the `ODC_Instruments_Template` folder.
 
 </details>
 
 <details>
 <summary><strong>Linux</strong></summary>
 
-These steps assume you're comfortable opening a terminal.
+These steps assume you're comfortable opening a terminal. Make sure `git` is installed (e.g. `sudo apt install git` on Debian/Ubuntu, or your distribution's equivalent).
 
-1. **Get the project files.** Use the green **Use this template** button on GitHub to create your own copy, then clone it, or download and unzip the project. `cd` into the project folder.
+1. **Download the project** with `git clone`, then move into its folder:
+
+   ```sh
+   git clone https://github.com/DouglasNeuroInformatics/ODC_Instruments_Template.git
+   cd ODC_Instruments_Template
+   ```
+
+   (If you made your own copy with **Use this template** on GitHub, clone _that_ repository's URL instead.)
 
 2. **Install a code editor (VS Code).** Optional but recommended — install it from [code.visualstudio.com](https://code.visualstudio.com) or your distribution's package manager.
 
-3. **Install nvm** (Node Version Manager). Follow the official instructions at [github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm#installing-and-updating), then **close and reopen your terminal** so the `nvm` command becomes available.
+3. **Install nvm** (Node Version Manager). Follow the official instructions at [github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm#installing-and-updating), then **close and reopen your terminal** and `cd ODC_Instruments_Template` again so the `nvm` command becomes available.
 
 4. **Install the right Node.js version.** From inside the project folder, run:
 
