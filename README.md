@@ -8,7 +8,52 @@ Use this repository as a starting point: click **Use this template** on GitHub (
 
 An instrument is the unit of data collection in Open Data Capture — it defines what the user sees, what data is produced, and how that data is validated. See the [instruments documentation](https://opendatacapture.org/en/docs/concepts/instruments/) for a full overview.
 
-## Getting started (from scratch)
+## Getting started
+
+There are two paths through this section, depending on your experience:
+
+- **[For developers](#for-developers)** — a quick reference if you already have [Node.js](https://nodejs.org) and [pnpm](https://pnpm.io) installed.
+- **[For beginners](#for-beginners-from-scratch)** — a step-by-step walkthrough from a brand-new computer, assuming no prior knowledge.
+
+### For developers
+
+#### Installation
+
+This repo uses [pnpm](https://pnpm.io). Install dependencies with:
+
+```sh
+pnpm install
+```
+
+You can setup an agents file with the following command:
+
+```sh
+pnpm exec instrument-guidelines --file CLAUDE.md
+```
+
+#### Adding an instrument
+
+Create a new directory under `lib/forms` (or `lib/interactive`) and add an `index.ts` that default-exports the result of `defineInstrument`. See [`lib/forms/EXAMPLE_FORM/index.ts`](./lib/forms/EXAMPLE_FORM/index.ts) for a minimal, fully-typed starting point.
+
+#### Serving an instrument
+
+Use `serve-instrument` to preview an instrument locally. Pass the instrument's directory as the target:
+
+```sh
+pnpm exec serve-instrument lib/forms/EXAMPLE_FORM
+```
+
+The dev server runs on port `3000` by default; override it with `-p <number>`.
+
+#### Linting
+
+Type-check and lint the instruments with:
+
+```sh
+pnpm lint
+```
+
+### For beginners (from scratch)
 
 New to programming? No problem. These steps take you from a brand-new computer all the way to a running preview of an instrument, assuming **no prior knowledge**. You'll install a few free tools, then copy and paste a handful of commands.
 
@@ -108,43 +153,7 @@ These steps assume you're comfortable opening a terminal.
 
 </details>
 
-Once you've done this once, you can re-run an instrument any time with just `pnpm exec serve-instrument <directory>`. The sections below are the quick reference for everyday use.
-
-## Installation
-
-This repo uses [pnpm](https://pnpm.io). Install dependencies with:
-
-```sh
-pnpm install
-```
-
-You can setup an agents file with the following command:
-
-```sh
-pnpm exec instrument-guidelines --file CLAUDE.md
-```
-
-## Adding an instrument
-
-Create a new directory under `lib/forms` (or `lib/interactive`) and add an `index.ts` that default-exports the result of `defineInstrument`. See [`lib/forms/EXAMPLE_FORM/index.ts`](./lib/forms/EXAMPLE_FORM/index.ts) for a minimal, fully-typed starting point.
-
-## Serving an instrument
-
-Use `serve-instrument` to preview an instrument locally. Pass the instrument's directory as the target:
-
-```sh
-pnpm exec serve-instrument lib/forms/EXAMPLE_FORM
-```
-
-The dev server runs on port `3000` by default; override it with `-p <number>`.
-
-## Linting
-
-Type-check and lint the instruments with:
-
-```sh
-pnpm lint
-```
+Once you've done this once, you can re-run an instrument any time with `pnpm exec serve-instrument <directory>`, and the [For developers](#for-developers) reference above is your day-to-day quick reference.
 
 ## Examples
 
