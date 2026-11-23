@@ -2,6 +2,7 @@ node_modules
 dist/
 scratch/
 settings.local.json
-AGENTS.md
-CLAUDE.md
 TODO.md
+data/
+*.log
+.DS_Store

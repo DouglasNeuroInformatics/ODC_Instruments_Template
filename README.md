@@ -25,11 +25,7 @@ This repo uses [pnpm](https://pnpm.io). Install dependencies with:
 pnpm install
 ```
 
-You can setup an agents file with the following command:
-
-```sh
-pnpm exec instrument-guidelines --file CLAUDE.md
-```
+The instructions for coding agents are in [`AGENTS.md`](./AGENTS.md). After `pnpm install`, `CLAUDE.md` also loads the instrument specification from `@opendatacapture/instrument-guidelines`.
 
 #### Adding an instrument
 
