@@ -15,7 +15,7 @@ export default config(
     }
   },
   {
-    ignores: ['vendor/**/*']
+    ignores: ['vendor/**/*', '**/TestMyBrain.*.js']
   },
   {
     rules: {

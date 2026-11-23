@@ -2,13 +2,16 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": ["@douglasneuroinformatics/tsconfig"],
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "jsx": "react-jsx",
     "lib": ["DOM", "ESNext"],
     "module": "Preserve",
     "moduleResolution": "Bundler",
+    "noEmit": true,
     "paths": {
       "/runtime/v1/*": ["./node_modules/@opendatacapture/runtime-v1/dist/*"]
     },
-    "types": ["@opendatacapture/runtime-v1/env"]
+    "types": ["@opendatacapture/runtime-v1/env", "node"]
   },
-  "include": ["lib"]
+  "include": ["lib/**/*", "scripts/*"]
 }
